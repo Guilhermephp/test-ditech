@@ -1,0 +1,361 @@
+/*
+  CSS PARA O PAINEL COFFEE CONTROL
+  AUTHOR: Guilherme Natus WebService
+  09 - 03 - 2017
+*/
+*{
+    margin:0;
+    padding:0;
+    outline:0;
+    
+    font-family:'Open Sans', sans-serif;
+    font-size: 1em;
+    font-weight:400;
+    
+    line-height: 1.2;
+    letter-spacing:0;
+    
+    box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+}
+
+/* RESETA OS SELETORES */
+body{width:100%; height:100%; float: left; background-color: #F5F5F5;}
+h1{font-size: 2em; font-weight: 400;}
+h2{font-size: 1.8em; font-weight: 600;}
+h3{font-size: 1.5em; font-weight: 800;}
+p{margin-bottom: 15px;}
+mark{padding:5px 10px; background-color: #eee;}
+ul{list-style:none;}
+img{border:none; max-width:100%; vertical-align: middle;}
+b, strong{font-weight:bold;}
+small{font-size:0.75em; color:#555;}
+a{text-decoration: none; color:#fff;}
+a img{border:0;}
+textarea{min-width:100%; max-width: 90%; max-height: 5%;}
+.mce-tinymce{margin-top:7px !important;}
+time{font-size:0.80em;}
+/* ---------------------------------------------- */
+
+/* IMAGEM GIF DO LOAD PARA EXECUTAR O AJAX */
+.ajax_load{display: none;}
+/* --------------------------------------- */
+
+/* DIV QUE ABRE E FECHA MENU PRINCIPAL */
+.men{padding: 10px; background: #FFF; cursor: pointer; float: left; display: block; margin-top: 5px; margin-left: 40px;}
+.men:hover{background: blue;}
+.menu1{width: 20px; height: 15px; background-image: url(../icons/mobile.png);}
+/* ---------------------------------- */
+
+.Error{position: fixed; top:50px; right: 0; margin-right: 2%; cursor: pointer;}
+.return-ajax{position: fixed; top:50px; right: 0; margin-right: 2%; cursor: pointer; z-index: 4;}
+
+/* FORMATAÇÃO DOS GATILHOS E GATILHOS PARA MENSAGENS DO SISTEMA */
+.trigger{padding: 20px; text-align:center; margin-bottom: 0;}
+.trigger a{font-weight: 600; font-size: 12px; text-transform: uppercase; padding: 5px 15px; background: #069; color: #fff;}
+.trigger a:hover{background: #09f; color: #fff;}
+
+.accept{background: #71ca73;}
+.infor{background: #c8dbfd;}
+.error{background: #faf7b7;}
+.alert{background: #ffafaf;}
+/* ------------------ */
+
+/* CABEÇALHO PAINEL COFFEE CONTROL */
+.painel-header{width: 85%; float: right; background: #F5F5F5; padding: 20px 0;} 
+.painel-header .content{width: 100%; display: block;}
+.header-logout{width:450px;}
+.header-logout a{margin-left: 20px;}
+.header-logout span{margin-top: 15px;}
+/* --------------------- */
+
+/* CONTEUDO QUE VAI SER COLOCADO PELOS CONTROLADORES */
+#painel{width: 85%; float:right;}
+#painel .content{width: 100%; float:left; background: #F5F5F5; padding: 40px 10px;}
+/* ------------------------------------------------- */
+
+/* FORMATAÇÃO DE DIV QUE FICA A LOGOMARCA OU A IMAGEM DO USUÁRIO */
+.logomarca{min-height: 180px; background: #042938;}
+.logomarca img{margin-top:32px;}
+/* ------------------------------------------------------------- */
+
+
+.form-search .box-dates{width: 31%; margin-right: 2%; margin-top: 10px;}
+.form-search .box-dates:nth-of-type(3n+0){width: 33%; margin-right: 0;}
+.form-search .select-order-date{width:100%; margin-top: 17px; max-width: 350px;}
+@media(max-width: 850px){
+    .form-search .box-orders{width: 100%; margin-right: 0;}
+    .form-search .box-dates{width: 100%; margin-right: 0;}
+    .form-search .box-dates:nth-of-type(3n+0){width: 100%;}
+    .form-search .box-dates-input{float: none; display: inline-block; margin-right: 0;}
+}
+
+/* FORMATAÇÃO MENU CENTRAL */
+.navadmin{min-width: 210px; max-width: 210px; height:100%; float: left; position: fixed; left: 0px; top:0; background: #005875; z-index: 200;}
+.navadmin ul{width: 100%; float: left; text-align: center;}
+.li{width:100%; float: left; margin-right: 5px; position: relative;}
+.active .opensub{background-color: blue !important;}
+.li .opensub:hover .rs{background-color: blue !important;}
+.li .opensub{width:100%; float: left; padding: 13px 0; color: #fff; background: #005875; font-size: 1.1em; font-weight: 400; border-bottom: 1px solid #ccc;}
+.sub a:hover{font-weight:800;}
+.sub{display: none;}
+.sub{width:100%; font-size: 13px; text-transform: uppercase; text-align: center; position: relative; background: #042938;}
+.sub li{width:100%; float: left;}
+.sub li a{width:100%; float: left; font-weight: 400; color: #FFF; padding: 17px 0;}
+.sub li a:hover .li{font-weight: 800;}
+.li:hover .sub{display: block;}
+/* ------------ */
+
+/* FORMATAÇÃO DA CLASSE PARA AS ESTATÍSTICAS NO DASHBOARD */
+.statistics .li{padding: 17px 0;}
+/* ----------------------------------------------------- */
+
+/* FORMATAÇÃO PADRÃO PARA OS CAMPOS QUE TEM A CLASSE FIELD */
+.field{font-weight: 300;}
+/* ------------------------------------------------------- */
+
+/* ICONES */
+.icon{padding-left:32px !important; background-size: auto 27px; background-repeat: no-repeat; background-position: left center;}
+.profile{background-image: url(../icons/profile.png); background-repeat: no-repeat;}
+.users-img{background-image: url(../icons/users.png); background-repeat: no-repeat;}
+.logout{background-image: url(../icons/logout.png); background-repeat: no-repeat;}
+.view{background: #fff url(../icons/e_view.png) left 10px center no-repeat;}
+.user{background: #fff url(../icons/e_user.png) left 10px center no-repeat;}
+.page{background: #fff url(../icons/e_page.png) left 10px center no-repeat;}
+.post{background: #fff url(../icons/e_post.png) left 10px center no-repeat;}
+.emp{background: #fff url(../icons/e_emp.png) left 10px center no-repeat;}
+.comm{background: #fff url(../icons/e_comm.png) left 10px center no-repeat;}
+/* ------- */
+
+/* FORMATAÇÃO PADRÃO DE li PARA BOTÕES COM IMAGENS PARA REALIZAR AS AÇOES DE VISUALIZAR, DELETAR, EDITAR, ATIVAR STATUS E OS BOTÕES COM BACKGROUND 
+PARA ESSAS AÇÕES */
+.post_actions{font-size: 12px; display: inline-block;}
+.post_actions li{float: left; margin-top: 10px; margin-right: 6px; font-size: 0;}
+.act_order{background-image: url(../icons/e_post.png); background-repeat: no-repeat; background-position: center; width: 25px; height: 25px;}
+.act_view{background-image: url(../icons/ver.png); background-repeat: no-repeat; background-position: center; width: 25px; height: 25px;}
+.act_edit{background-image: url(../icons/editar.png); background-repeat: no-repeat; background-position: center; width: 25px; height: 25px;}
+.act_ative{background-image: url(../icons/ativo.png); background-repeat: no-repeat; background-position: center; width: 25px; height: 25px;}
+.act_delete, .act_delete_gallery{background-image: url(../icons/delete.png); background-repeat: no-repeat; background-position: center; width: 25px; height: 25px;}
+.search{background-image: url(../icons/search.png); background-repeat: no-repeat; background-position: center; width: 25px; height: 25px;}
+.act_download{background-image: url(../icons/download.png); background-color: transparent !important; background-repeat: no-repeat; background-position: center; background-size:cover; width: 25px; height: 25px;}
+/* --------------- */
+
+/* BOX COM STATUS E VIEWS */
+.box-statusviews{padding:10px;}
+.box-statusviews .status{padding: 0px 20px; width: 0; height: 28px; margin-right: 5px;}
+.box-statusviews .views{padding: 5px 17px;}
+.paddingleft{padding-left:10px;}
+/* ---------------------- */
+
+/* ---------------- BOOT CSS PADRÃO --------------------- */
+
+/* CONFIGURAÇÕES PADRÕES PARA  FORMULÁRIOS */
+label{display: block; margin-bottom: 15px;}
+input, textarea, select{padding: 10px; border:1px solid #ccc; width: 100%; margin-top: 7px;}
+select{cursor: pointer;}
+/* ------------------- */
+
+/* BACKGROUND-COLOR - PALETA DE CORES */
+/* 3 CORES ESCURAS E 2 CLARAS - 3 CORES MAIS ESCURAS PARA COLOCAR OS DESTAQUES E 
+  2 CORES MAIS CLARAS PARA INTERCALAR E FAZER O LAYOUT CONTINUAR SENDO KLIN, MESMO SENDO COLORIDO. */
+.bg-body{background-color: #fbfbfb !important; color:#333 !important; }
+.bg-gray{background-color:#444444 !important; color:#fff !important;}
+.bg-blue{background-color:#34495E !important; color:#fff !important;} /* GOSTA DE UTILIZAR AZUL */
+.bg-orange{background-color:#E16F4D !important; color:#fff !important;} /* COMBINAR COM A COR DO PRODUTO */
+.bg-bluelight{background-color:#67B1D6 !important; color:#FFF !important;} /* ALTERAÇÃO VISUAL ENTRE UM CONTAINER E OUTRO */
+.bg-bluedark{background-color: #00008C !important; color:#fff !important;}
+.bg-light{background-color:#D0CFB9 !important; color:#444 !important;}
+.bg-graylight{background-color: #B4AD8B !important; color:#fff !important;}
+.bg-graylight1{background-color: #DDD !important; color:#333 !important;}
+.bg-greenlight{background-color:#CCD8D1 !important; color:#444 !important;}
+.bg-blacklight{background-color: #444 !important; color:#fff !important;}
+.bg-black{background-color: #222 !important; color:#fff !important;}
+.bg-write{background-color: #FFF !important; color:#333 !important;}
+.bg-writelight{background-color: #ddd !important; color: #333 !important;}
+.bg-writelight1{background-color: #f5f5f5 !important; color: #111 !important;}
+.bg-graydark{background-color: #777 !important; color:#FFF !important;}
+.bg-green{background-color:#048C76; color:#FFF;}
+.bg-red{background-color:#ff3232; color:#FFF;}
+.bg-yellow1{background-color: #FAAD50 !important; color:#fff;}
+.bg-green1{background-color: #00B494 !important;}
+.bg-blue1{background-color: #0E96E5 !important;}
+.bg-red1{background-color: #C54550 !important;}
+.bg-purple1{background-color: #b78fd3 !important;}
+.bg-vintage1{background-color: #7eb1bc !important;}
+.bg-blue2{background: #0E96E5 !important; border-color: #096397 !important; color: #fff;}
+.bg-green2{background: #00B494 !important; border-color: #008068 !important; color: #fff;}
+.bg-yellow2{background: #FABB3D !important; border-color: #EEA306 !important; color: #fff;}
+.bg-red2{background: #FF524F !important; border-color: #C63D3A !important; color: #fff;}
+/* ----------------- */
+
+/* COLORS */
+.black{color: black !important;}
+.white{color: white !important;}
+.yellow{color: #FAAD50 !important;}
+.green{color: #00B494 !important;}
+.blue{color: #0E96E5 !important;}
+.red{color: #C54550 !important;}
+.purple{color: #B78FD3 !important;}
+.vintage{color: #7EB1BC !important;}
+/* ---- */
+
+/* FONT-WEIGHT */
+.font300{font-weight: 300 !important;}
+.font400{font-weight: 400 !important;}
+.font500{font-weight: 500 !important;}
+.font600{font-weight: 600 !important;}
+.font700{font-weight: 700 !important;}
+/* ------------ */
+
+/* FONT-SIZE */
+.fontzero{font-size:0em !important;}
+.fontsizebb{font-size: 0.7em !important;}
+.fontsizeb{font-size: 0.875em !important;}
+.fontsize1{font-size:1em !important;}
+.fontsize11{font-size:1.1em !important;}
+.fontsize12{font-size:1.2em !important;}
+.fontsize1b{font-size:1.5em !important;}
+.fontsize2{font-size:2em !important;}
+.fontsize2b{font-size: 2.5em !important;}
+.fontsize3{font-size: 3em !important;}
+/* ---------------------------------- */
+
+/* CONTAINERS */
+.container{float:left; width:100%;}
+.container1{float:left; width:90%; margin: 0 5%;}
+.content1{width:80%; padding: 40px 0; margin: 0 10%;}
+
+.sectiontitle{width:100%; float:left; text-align: center; margin-bottom: 30px;}
+.sectiontitle h1{font-size: 2.4em; font-weight: 400; margin-bottom: 30px;}
+.sectiontitle .tagline{font-size: 1.4em; font-weight: 400;}
+
+.articletitle{width:100%; float:left; margin-bottom: 30px;}
+.articletitle h1{font-size: 1.8em; margin-bottom: 5px;}
+.articletitle .tagline{font-size: 1.3em;}
+
+.sectiontitle-nomargin, .articletitle-nomargin{margin: 0;}
+/* ---------------- */
+
+/* HELPERS */
+.textshadow{text-shadow: 1px 1px 0 black;}
+.boxshadow{-webkit-box-shadow: 0 3px 3px 0 rgba(0,0,0,.3); -moz-box-shadow: 0 3px 3px 0 rgba(0,0,0,.3); box-shadow: 0 3px 3px 0 rgba(0,0,0,.3);}
+.radius{border-radius: 5px; -webkit-border-radius: 5px; -moz-border-radius: 5px;}
+.round{-webkit-border-radius: 50%; -moz-border-radius: 50%; border-radius: 50%;}
+.last{margin-right: 0 !important;}
+.uppercase{text-transform: uppercase;}
+.top10{margin-top: 10px;}
+.bottom2{margin-bottom: 2px !important;}
+.bottom5{margin-bottom: 5px !important;}
+.bottom10{margin-bottom: 10px !important;}
+.bottom15{margin-bottom: 15px !important;}
+.bottom20{margin-bottom: 20px !important;}
+.bottom30{margin-bottom: 30px !important;}
+.bottom40{margin-bottom: 40px !important;}
+.bottom50{margin-bottom: 50px !important;}
+.bottom60{margin-bottom: 60px !important;}
+.top5{margin-top: 5px !important;}
+.top10{margin-top: 10px !important;}
+.top15{margin-top: 15px !important;}
+.top20{margin-top: 20px !important;}
+.top25{margin-top: 25px !important;}
+.top30{margin-top: 30px !important;}
+.top35{margin-top: 35px !important;}
+.top40{margin-top: 40px !important;}
+.nomargin{margin: 0 !important;}
+.clear{clear:both;}
+.border-bottom{border-bottom:1px dotted #BBB; padding-bottom: 30px;}
+.border-bottom1{border-bottom:1px solid #ddd;}
+.padding10{padding: 10px;}
+.padding15{padding: 15px;}
+.padding20{padding: 20px;}
+.padding40{padding: 40px;}
+.border-none{border:none !important;}
+.padding0{padding:0;}
+.pointer{cursor:pointer;}
+/* -------------- */
+
+/* TEXT-ALIGN */
+.al-left{text-align: left;}
+.al-right{text-align: right;}
+.al-center{text-align: center;}
+/* -------- */
+
+/* FLOATS */
+.fl-left{float:left;}
+.fl-right{float:right;}
+.fl-none{float:none;}
+/* --------- */
+
+/* DISPLAY */
+.ds-block{display:block;}
+.ds-inblock{display: inline-block;}
+.ds-none{display: none;}
+/*- --------- */
+
+/* POSITIONS */
+.fixed{position:fixed;}
+.relative{position: relative;}
+.absolute{position: absolute;}
+/* ---------- */
+
+/* BOX */
+.box{width:auto; float:left;}
+.box-line{width:100%; float:left;}
+
+.box100{width: 100%;}
+.box65{width: 65%;}
+.box50{width: 50%;}
+.box30{width: 30%;}
+.box-small{width:22.75%; margin-right:3%;}
+.box-medium, .box-success{width:30%; margin-right: 5%;}
+.box-medium1{width:30%; margin-right: 5%;}
+.box-large{width:46.5%; margin-right: 7%}
+.box-full{width:100%; margin: 0;}
+/* ----- */
+
+/* VÍDEO */
+.video{width:100%; float: left; margin: 0;}
+.video-small{width:40%; margin: 0 30%;}
+.video-medium{width:60%; margin: 0 20%;}
+.video-large{width: 80%; margin: 0 10%;}
+
+/* RATIO */
+.ratio{position: relative; float:left; padding-bottom: 56.25%; width: 100%; height:0;}  
+.media{position: absolute; width:100%; height:100%;}
+object, embed, video, iframe, iframe['style']{width: 100%; height:auto;}
+/* --------- */
+
+/* BOTÕES */
+.btn{
+    display:inline-block; 
+    padding: 12px 16px; 
+    background-color: #333; 
+    cursor:pointer; 
+    font-size: 1em; 
+    font-weight: bold; 
+    color:#fff; 
+    -webkit-box-shadow:inset 0 1px 0 rgba(255,255,255,.2), 0 1px 2px rgba(0,0,0,0.05);
+    -moz-box-shadow:inset 0 1px 0 rgba(255,255,255,.2), 0 1px 2px rgba(0,0,0,0.05);
+    box-shadow:inset 0 1px 0 rgba(255,255,255,.2), 0 1px 2px rgba(0,0,0,0.05);
+}
+.btn:hover{text-decoration:none!important;}
+.btn-small{padding: 10px 0;}
+.btn-big{font-size: 2em; padding: 10px 20px;}
+.btn-green{background-color:#398e2d;}
+.btn-green:hover{background-color:#245b1d;}
+.btn-red{background-color:#ff3232;}
+.btn-red:hover{background-color:#d40a0a;}
+.btn-orange{background-color:#F26829; border-color:#E44D26;}
+.btn-orange:hover{background-color:#DA411B; border-color:#F26829;}
+.btn-blue{background-color:#3395C4;}
+.btn-blue:hover{background-color:blue;}
+/*------------*/
+
+/* ------- TERMINA BOOT CSS PADRÃO ------- */
+
+
+
+.exams .box-medium{min-height: 160px;}
+.procedures .box-medium{min-height: 160px;}
+.specialties .box-medium{min-height: 160px;}

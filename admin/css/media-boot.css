@@ -1,0 +1,70 @@
+/*------- BOX COM 4 CAIXAS - FICA APENAS 2 --------*/
+@media screen and (max-width:1300px){
+    .time{display:none;}
+    .painel-header{width:100%; float:left;}
+    .painel-header .content{width: 90%; margin: auto;}
+    .header-logout{float: left; width:auto;}
+    .navadmin{left:-210px;}
+    .men{float: right;}
+    .sair{float:left;}
+    #painel{width: 100%;}
+}
+/* -------------- */
+
+@media screen and (max-width:1000px){
+    .box-small{width:46.5% !important; margin-right: 7% !important;}
+    .box-small:nth-of-type(2n+0){margin-right: 0 !important;}
+    .box65{width:100%;}
+    .box30{float:left; width:100%;}
+}
+
+/*------- BOX COM 3 CAIXAS - FICA APENAS 2 --------*/
+@media screen and (max-width:900px){
+    .box-medium{width:46.5% !important; margin-right: 7% !important;}
+    .box-medium:nth-of-type(2n+0){margin-right: 0 !important;}
+}
+/* -------------- */
+
+/*------- BOX COM 2 CAIXAS - FICA APENAS 1 --------*/
+@media screen and (max-width:800px){
+    .box-large{width:100% !important; margin-right: 0% !important;}
+}
+@media screen and (max-width:850px){
+    .breadcrumbs{text-align: center;}
+    .breadcrumbs-box{width: 100%;}
+    .form-search{width:100%; float:left;}
+    .form-search input{width: 70% !important; max-width: 350px;}
+}
+/* -------------- */
+
+/*------- BOX COM 3/4 CAIXAS - FICA APENAS 1 --------*/
+@media screen and (max-width:600px){
+    .box-small, .box-medium{width:100% !important; margin-right: 0 !important;}
+}
+/* -------------- */
+
+/*------- DESAPARECE MENU PADRÃO E APARECE MENU MOBILE --------*/
+@media screen and (max-width:930px){
+    .menu-boot{display:none; float: none !important;}
+    .main_menu{width:100% !important; float: left !important; margin-top: 20px !important; margin-right: 0 !important;}
+    .menu-boot li{width:100%; text-align: center; background-color: #EEE; margin-bottom: 2px;}
+    .menu-boot a{width:100%; float:none; display: inline-block;}
+    .menu{display: block;}
+}
+
+/*------- REAPARECE MENU NORMAL --------*/
+@media screen and (min-width:931px){
+    .menu-boot{display: block !important;}
+}
+/* -------------- */
+
+@media screen and (max-width:405px){
+    .btn-big{font-size: 1.3em !important;}
+    .artigo h1{padding: 0;}
+}
+/*----- DEIXA RESPONSIVO A PÁGINA CATEGORIA, ARTIGO E PESQUISA --------*/
+@media screen and (max-width:1130px){
+    .categoria, .artigo, .pesquisa{width: 100%; margin-bottom: 30px;}
+    .categoria-aside, .artigo-aside, .pesquisa-aside{width: 100%; padding: 0;}
+}
+/* -------------------------------------------------------------- */
