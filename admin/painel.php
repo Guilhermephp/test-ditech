@@ -62,7 +62,27 @@ if($logoff){
                     ?>
                     <div class="logomarca ds-none"><img src="images/novo.png" class="logo"/></div>
                     <ul class="menu">
-                        <li class="li<?php if(in_array('home', $linkto)): echo ' active'; endif; ?>"><a title="Dashboard" class="opensub" href="painel.php?cc=home">Dashboard</a></li>  
+                        <li class="li<?php if(in_array('home', $linkto)): echo ' active'; endif; ?>"><a title="Dashboard" class="opensub" href="painel.php?cc=home">Dashboard</a></li>
+                        <li class="li<?php if(in_array('rooms', $linkto)): echo ' active'; endif; ?>"><a title="Usuários" class="opensub" href="painel.php?cc=rooms/index">Salas</a>
+                            <ul class="sub">
+                                <li>
+                                    <a title="Cadastrar Sala" href="painel.php?cc=rooms/create">
+                                        Cadastrar Sala
+                                    </a>
+                                </li>
+                                <li>
+                                    <a title="Listar Salas" href="painel.php?cc=rooms/index">
+                                        Listar Salas
+                                    </a>
+                                </li>
+                            </ul>
+                        </li>  
+                        <li class="li<?php if(in_array('users', $linkto)): echo ' active'; endif; ?>"><a title="Usuários" class="opensub" href="painel.php?cc=users/users">Usuários</a>
+                            <ul class="sub">
+                                <li><a title="Cadastrar Usuário" href="painel.php?cc=users/create">Cadastrar Usuário</a></li>
+                                <li><a title="Listar Usuários" href="painel.php?cc=users/users">Listar Usuários</a></li>
+                            </ul>
+                        </li>  
                     </ul>
         </nav>      
             

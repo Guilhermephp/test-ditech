@@ -38,13 +38,9 @@ spl_autoload_register('autoload');
 define('HOST','localhost'); // 198.136.59.241
 define('USER','root'); // agencia4_nhonline
 define('PASS','');
-define('DBSA','system'); // agencia4_nhonline
+define('DBSA','test'); // agencia4_nhonline
 
-define('HOME','http://localhost/test-ditech');
-define('MAILUSER','kkk@agenciacion.com.br');
-define('MAILPASS','k^&rLHN9V]b#');
-define('MAILPORT','587');
-define('MAILHOST','mail.agenciacion.com.br');    
+define('HOME','http://localhost/test-ditech');    
 
 define('THEME','system');
     

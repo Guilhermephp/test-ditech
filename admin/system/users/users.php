@@ -55,7 +55,7 @@ endif;
                 $deleteUser = new AdminUser;
                 $deleteUser->ExeDelete($delete);
 
-                echo WSErro($deleteUser->getError()[0], $deleteUser->getError()[1], "", "Error white bg-green");
+                header("Location:painel.php?cc=users/users");
             }
         }
 
