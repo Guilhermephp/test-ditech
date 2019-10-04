@@ -7,7 +7,7 @@ endif;
     <div class="container padding20 bg-write breadcrumbs">
         <div class="box box-large">
             <h1 style="margin-top:6px; color: #555; margin-left: 40px; margin-bottom: 10px;" class="bg-write font300 fontsize1b">Cadastrar Usuário</h1>
-            <p class="fontsizeb font400">>> Coffee Control / Dashboard / Cadastrar Nova Sala <<</p>
+            <p class="fontsizeb font400">>> Coffee Control / Dashboard / Reservar Sala <<</p>
         </div>
     </div>    
 </div> 
@@ -70,7 +70,7 @@ endif;
 
         </div>
         <div style="margin-top: 20px; width: 90%; margin: 0 5%;" class="bg-write fl-right padding20 al-center">
-            <button type="submit" title="Atualizar Sala" class="btn btn-blue" value="Atualizar Sala" name="SendPostForm">Atualizar Sala</button>
+            <button type="submit" title="Atualizar Sala" class="btn btn-blue" value="Reservar Sala" name="SendPostForm">Reservar Sala</button>
             <img style="margin-left: 10px;" class="ajax_load" src="images/load.gif" title="Carregando..." alt="Carregando..."/>
         </div>      
     </form>

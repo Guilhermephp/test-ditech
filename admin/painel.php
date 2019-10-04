@@ -76,7 +76,7 @@ if($logoff){
                                     </a>
                                 </li>
                                 <li>
-                                    <a title="Listar Salas" href="painel.php?cc=rooms/reserve">
+                                    <a title="Reservar Sala" href="painel.php?cc=rooms/reserve">
                                         Reservar Sala
                                     </a>
                                 </li>

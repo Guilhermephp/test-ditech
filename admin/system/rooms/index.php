@@ -54,6 +54,7 @@ endif;
                             <li class="bottom5 ds-block"><span class="fontsizeb"><?= $room_title; ?></span></li>
                             <li class="ds-inblock"><a class="act_edit btn btn-green fontzero" href="painel.php?cc=rooms/create&id=<?= $room_id; ?>" title="Editar">Editar</a></li>
                             <li class="ds-inblock"><a class="act_delete btn btn-red fontzero" href="painel.php?cc=rooms/index&delete=<?= $room_id; ?>" title="Deletar">Deletar</a></li>
+                            <li class="ds-inblock"><a class="act_view btn btn-red fontzero" href="painel.php?cc=rooms/no_reserve&id=<?= $room_id; ?>" title="Retirar Reserva">Retirar Reserva</a></li>
                         </ul>
                     </article>
         <?php
