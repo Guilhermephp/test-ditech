@@ -54,6 +54,11 @@ $(function(){
                             window.location.href = data.redirect;
                         },2000);
                     }
+                    if(data.id_date){
+                        $("#date_room" + data.id_date).fadeOut(400, function(){
+                            $(this).remove();
+                        });
+                    }
                 });
             }
         });

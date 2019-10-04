@@ -17,7 +17,7 @@ endif;
         <form method ="post" name="UserCreateForm">
             
             <div class="return-ajax ds-none"></div>
-            <input type="hidden" name="file" value="Reserves"/>
+            <input type="hidden" name="file" value="No_Reserves"/>
             <input type="hidden" name="action" value="No_Reserve_Room"/>
             
         <div style="width:90%; margin: 0 5%;" class="box bg-write padding20">    
@@ -46,10 +46,9 @@ endif;
             <label class="label">
                 <span class="field">Sala:</span>
                 <select name="room_user_id">
-                    <option value="">Selecionar Sala</option>
                     <?php 
                         $read_rooms = new _app\Conn\Read;
-                        $read_rooms->FullRead("SELECT * FROM rooms");
+                        $read_rooms->FullRead("SELECT * FROM rooms WHERE room_id = :room_id", "room_id={$id}");
                         if($read_rooms->getResult()){
                             foreach($read_rooms->getResult() as $rooms){
                     ?>
@@ -74,24 +73,28 @@ endif;
 
             <label class="label">
                 <span style="margin-bottom: 15px;" class="ds-block field">Horários:</span>
+                <select class="red1" name="date_room_id">
+                    <option class="red1">Horários Ocupados</option>
                     <?php
-                        $read_dates = new _app\Conn\Read;
-                        $read_dates->FullRead("SELECT * FROM dates WHERE date_id IN ({$array_date_implode}) ORDER BY date_id ASC");
-                        if($read_dates->getResult()){
-                            foreach($read_dates->getResult() as $read_dates){
+                        if($read_dates_rooms->getResult()){
+                            $read_dates = new _app\Conn\Read;
+                            $read_dates->FullRead("SELECT * FROM dates WHERE date_id IN ({$array_date_implode}) ORDER BY date_id ASC");
+                            if($read_dates->getResult()){
+                                foreach($read_dates->getResult() as $read_dates){
                     ?>
-                                <p class="red">
-                                    <?php echo $datetime->format($read_dates['date_value']); ?> - Ocupado   
-                                </p>
+                                    <option id="date_room<?= $read_dates['date_id']; ?>" value="<?php echo $read_dates['date_id'] ?>">
+                                        <?php echo $datetime->format($read_dates['date_value']); ?> - Ocupado 
+                                    </option> 
                     <?php
+                                }
                             }
                         }
                     ?>   
+                </select>    
             </label>
-
         </div>
         <div style="margin-top: 20px; width: 90%; margin: 0 5%;" class="bg-write fl-right padding20 al-center">
-            <button type="submit" title="Atualizar Sala" class="btn btn-blue" value="Atualizar Sala" name="SendPostForm">Atualizar Sala</button>
+            <button type="submit" title="Retirar Reserva de Sala" class="btn btn-blue" value="Retirar Reserva de Sala" name="SendPostForm">Retirar Reserva de Sala</button>
             <img style="margin-left: 10px;" class="ajax_load" src="images/load.gif" title="Carregando..." alt="Carregando..."/>
         </div>      
     </form>
