@@ -360,6 +360,14 @@ class Check {
         self::$Data = self::$Data[2] . '-' . self::$Data[1] . '-' . self::$Data[0] . ' ' . self::$Format[1];
         return self::$Data;
     }
+
+    public static function DateFormat($Data){
+        self::$Format = $Data;
+        self::$Data = explode('/', self::$Format);
+        
+        self::$Data = self::$Data[2] . '-' . self::$Data[1] . '-' . self::$Data[0];
+        return self::$Data;
+    }
     
     public static function is_day($Day){
         if(!is_numeric($Day)){

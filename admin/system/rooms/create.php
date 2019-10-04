@@ -54,9 +54,52 @@ endif;
             
         <div style="width:90%; margin: 0 5%;" class="box bg-write padding20">    
             
+            <?php 
+                $datetime = new datetime;
+            ?>
+
             <label class="label">
                 <span class="field">Nome:</span>
                 <input type="text" name="room_title" title="Informe o nome da sala" placeholder="Informe o nome da sala" value="<?= (isset($room_title) ? $room_title : ''); ?>" required/>
+            </label>
+
+            <?php 
+                $read_dates_rooms = new _app\Conn\Read;
+                $read_dates_rooms->FullRead("SELECT date_room_id FROM rooms_users WHERE user_room_id = :user_room_id AND room_user_id = :room_user_id ORDER BY room_user_id ASC", "user_room_id={$_SESSION['userlogin']['user_id']}&room_user_id={$id}");
+                if($read_dates_rooms->getResult()){
+                    foreach($read_dates_rooms->getResult() as $dates_rooms){
+                        $array_date[] = $dates_rooms['date_room_id'];
+                    }
+                    $array_date_implode = implode(", ", $array_date);    
+                }
+            ?>    
+
+            <label class="label">
+                <span style="margin-bottom: 15px;" class="ds-block field">Horários:</span>
+                    <?php
+                        $read_dates = new _app\Conn\Read;
+                        $read_dates->FullRead("SELECT * FROM dates WHERE date_id IN ({$array_date_implode}) ORDER BY date_id ASC");
+                        if($read_dates->getResult()){
+                            foreach($read_dates->getResult() as $read_dates){
+                    ?>
+                                <p class="red">
+                                    <?php echo $datetime->format($read_dates['date_value']); ?> - Ocupado   
+                                </p>
+                    <?php
+                            }
+                        }
+                        $read_dates = new _app\Conn\Read;
+                        $read_dates->FullRead("SELECT * FROM dates WHERE date_id NOT IN ({$array_date_implode}) ORDER BY date_id ASC");
+                        if($read_dates->getResult()){
+                            foreach($read_dates->getResult() as $key => $dates){
+                    ?>
+                                <p>
+                                    <?php echo $datetime->format($dates['date_value']); ?>   
+                                </p>
+                    <?php           
+                            }
+                        }
+                    ?>   
             </label>
 
         </div>

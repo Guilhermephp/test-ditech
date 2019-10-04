@@ -75,6 +75,11 @@ if($logoff){
                                         Listar Salas
                                     </a>
                                 </li>
+                                <li>
+                                    <a title="Listar Salas" href="painel.php?cc=rooms/reserve">
+                                        Reservar Sala
+                                    </a>
+                                </li>
                             </ul>
                         </li>  
                         <li class="li<?php if(in_array('users', $linkto)): echo ' active'; endif; ?>"><a title="Usuários" class="opensub" href="painel.php?cc=users/users">Usuários</a>

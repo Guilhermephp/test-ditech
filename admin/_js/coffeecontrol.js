@@ -26,43 +26,7 @@ $(function(){
     });
     
     // $$$$$$COFFEE-GuilhermeNatus-PHP$$$$$$ Mascara com o plugin Mask para o campo CPF do painel CoffeeControl! $$$$$$COFFEE-GuilhermeNatus-PHP$$$$$$
-    $(".cpf").mask("999.999.999-99");
-    $(".cnpj").mask("99.999.999/9999-99");
-    $(".day").mask("99");
-    $(".day").keyup(function(){
-        var day_value = $(this).val();
-        if(day_value < 0){
-            $(this).val(0);
-        }
-        if(day_value.length === 2 && day_value > 31){
-            $(this).val(31);
-        }
-    });
-    $(".month").mask("99");
-    $(".month").keyup(function(){
-        var month_value = $(this).val();
-        if(month_value < 0){
-            $(this).val(0);
-        }
-        if(month_value.length === 2 && month_value > 12){
-            $(this).val(12);
-        }
-    });
-    $(".year").mask("99999999999999999999999999999999999");
-    $(".year").keyup(function(){
-        var year_value = $(this).val();
-        if(year_value < 0){
-            $(this).val(0);
-        }
-    });
-    // $$$$$$COFFEE-GuilhermeNatus-PHP$$$$$$ Mascara com o plugin Mask para o campo TELEFONE do painel CoffeeControl! $$$$$$COFFEE-GuilhermeNatus-PHP$$$$$$
-    $(".telephone").mask("(99)9999-9999");
-    // $$$$$$COFFEE-GuilhermeNatus-PHP$$$$$$ Mascara com o plugin Mask para o campo CELULAR do painel CoffeeControl! $$$$$$COFFEE-GuilhermeNatus-PHP$$$$$$
-    $(".cell").mask("(99)99999-9999");
-
-    setTimeout(function(){
-        $('.Error').fadeOut('slow');
-    }, 6000);
+    $(".date").mask("99/99/9999");
     
     // $$$$$$COFFEE-GuilhermeNatus-PHP$$$$$$ Verifica se não tem a classe no_post_ajax, para postar nos arquivos php e realizar o ajax! $$$$$$COFFEE-GuilhermeNatus-PHP$$$$$$
     $('form').not('.no_post_ajax').submit(function(){
