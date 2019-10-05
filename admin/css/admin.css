@@ -330,7 +330,7 @@ object, embed, video, iframe, iframe['style']{width: 100%; height:auto;}
 /* BOTÕES */
 .btn{
     display:inline-block; 
-    padding: 12px 16px; 
+    padding: 9px 13px; 
     background-color: #333; 
     cursor:pointer; 
     font-size: 1em; 
@@ -352,6 +352,15 @@ object, embed, video, iframe, iframe['style']{width: 100%; height:auto;}
 .btn-blue{background-color:#3395C4;}
 .btn-blue:hover{background-color:blue;}
 /*------------*/
+
+.Error-fixed{width: 50%; z-index: 3; padding: 25px 25px 10px 25px; border-radius: 10px; font-size: 20px; -webkit-border-radius: 10px; -moz-border-radius: 10px; position: fixed; right: 0; top: 30px; color: #ffffff; margin-top: 10px; margin-right: 2%; background: #007481; border: 3px solid #aaaaaa;}
+.return-ajax p{font-family: Poppins; font-size: 22px;}
+@media(max-width: 800px){
+    .Error-fixed, .return-ajax{width: 96%; margin: 0 2%;}
+}
+
+.close-window{padding: 6px 12px; display: inline-block; border:3px solid #ffffff; top:8px; margin-bottom: 20px; background-color: #007481; color: #ffffff; cursor: pointer; -webkit-border-radius:50%; -moz-border-radius:50%; border-radius:50%; -o-transition: 0.4s; -ms-transition: 0.4s; -moz-transition: 0.4s; -webkit-transition: 0.4s; transition: 0.4s;}
+.close-window:hover{background-color: #05474e; color: #ffffff; -webkit-border-radius:50%; -moz-border-radius:50%; border-radius:50%; -o-transition: 0.4s; -ms-transition: 0.4s; -moz-transition: 0.4s; -webkit-transition: 0.4s; transition: 0.4s;}
 
 /* ------- TERMINA BOOT CSS PADRÃO ------- */
 

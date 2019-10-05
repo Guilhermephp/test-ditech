@@ -6,7 +6,7 @@ endif;
 <div style="border:2px solid #eee;" class="container">
     <div class="container padding20 bg-write breadcrumbs">
         <div class="box box-large">
-            <h1 style="margin-top:6px; color: #555; margin-left: 40px; margin-bottom: 10px;" class="bg-write font300 fontsize1b">Cadastrar Usuário</h1>
+            <h1 style="margin-top:6px; color: #555; margin-left: 40px; margin-bottom: 10px;" class="bg-write font300 fontsize1b">Retirar Sala</h1>
             <p class="fontsizeb font400">>> Coffee Control / Dashboard / Retirar Sala <<</p>
         </div>
     </div>    
@@ -74,7 +74,7 @@ endif;
             <label class="label">
                 <span style="margin-bottom: 15px;" class="ds-block field">Horários:</span>
                 <select class="red1" name="date_room_id">
-                    <option class="red1">Horários Ocupados</option>
+                    <option value="" class="red1">Horários Ocupados</option>
                     <?php
                         if($read_dates_rooms->getResult()){
                             $read_dates = new _app\Conn\Read;

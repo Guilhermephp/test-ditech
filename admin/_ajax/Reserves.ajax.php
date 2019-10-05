@@ -53,7 +53,7 @@ if(($postAjax && $postAjax['action']) && $postAjax['file'] == $File):
                     }    
                 }   
                 else{
-                    $json['message'] = "<b>Erro!</b>";
+                    $json['message'] = "<b>Erro ao reservar sala: </b>Favor tente novamente!";
                 }
             endif;
         break;    

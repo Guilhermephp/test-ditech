@@ -6,7 +6,7 @@ endif;
 <div style="border:2px solid #eee;" class="container">
     <div class="container padding20 bg-write breadcrumbs">
         <div class="box box-large">
-            <h1 style="margin-top:6px; color: #555; margin-left: 40px; margin-bottom: 10px;" class="bg-write font300 fontsize1b">Cadastrar Usuário</h1>
+            <h1 style="margin-top:6px; color: #555; margin-left: 40px; margin-bottom: 10px;" class="bg-write font300 fontsize1b">Cadastrar Sala</h1>
             <p class="fontsizeb font400">>> Coffee Control / Dashboard / Cadastrar Nova Sala <<</p>
         </div>
         <div class="box box-large last al-center">
@@ -77,28 +77,43 @@ endif;
             <label class="label">
                 <span style="margin-bottom: 15px;" class="ds-block field">Horários:</span>
                     <?php
-                        $read_dates = new _app\Conn\Read;
-                        $read_dates->FullRead("SELECT * FROM dates WHERE date_id IN ({$array_date_implode}) ORDER BY date_id ASC");
-                        if($read_dates->getResult()){
-                            foreach($read_dates->getResult() as $read_dates){
+                        if($read_dates_rooms->getResult()){
+                            $read_dates = new _app\Conn\Read;
+                            $read_dates->FullRead("SELECT * FROM dates WHERE date_id IN({$array_date_implode}) ORDER BY date_id ASC");
+                            if($read_dates->getResult()){
+                                foreach($read_dates->getResult() as $read_dates){
                     ?>
-                                <p class="red">
-                                    <?php echo $datetime->format($read_dates['date_value']); ?> - Ocupado   
-                                </p>
+                                    <p class="red">
+                                        <?php echo $datetime->format($read_dates['date_value']); ?> - Ocupado   
+                                    </p>
                     <?php
+                                }
                             }
-                        }
-                        $read_dates = new _app\Conn\Read;
-                        $read_dates->FullRead("SELECT * FROM dates WHERE date_id NOT IN ({$array_date_implode}) ORDER BY date_id ASC");
-                        if($read_dates->getResult()){
-                            foreach($read_dates->getResult() as $key => $dates){
+                            $read_dates = new _app\Conn\Read;
+                            $read_dates->FullRead("SELECT * FROM dates WHERE date_id NOT IN({$array_date_implode}) ORDER BY date_id ASC");
+                            if($read_dates->getResult()){
+                                foreach($read_dates->getResult() as $key => $dates){
                     ?>
-                                <p>
-                                    <?php echo $datetime->format($dates['date_value']); ?>   
-                                </p>
+                                    <p>
+                                        <?php echo $datetime->format($dates['date_value']); ?>   
+                                    </p>
                     <?php           
+                                }
                             }
                         }
+                        else{
+                            $read_dates = new _app\Conn\Read;
+                            $read_dates->FullRead("SELECT * FROM dates ORDER BY date_id ASC");
+                            if($read_dates->getResult()){
+                                foreach($read_dates->getResult() as $key => $dates){
+                    ?>
+                                    <p>
+                                        <?php echo $datetime->format($dates['date_value']); ?>   
+                                    </p>
+                    <?php           
+                                }
+                            }       
+                        }    
                     ?>   
             </label>
 

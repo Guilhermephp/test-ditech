@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: 04-Out-2019 às 05:54
+-- Generation Time: 05-Out-2019 às 03:31
 -- Versão do servidor: 10.1.38-MariaDB
 -- versão do PHP: 7.3.3
 
@@ -65,8 +65,7 @@ CREATE TABLE `rooms` (
 --
 
 INSERT INTO `rooms` (`room_id`, `room_title`, `room_date`) VALUES
-(4, 'salas teste', '2019-10-04 05:18:20'),
-(5, 'sala', '2019-10-04 07:49:34');
+(4, 'salas teste', '2019-10-04 05:18:20');
 
 -- --------------------------------------------------------
 
@@ -87,9 +86,7 @@ CREATE TABLE `rooms_users` (
 --
 
 INSERT INTO `rooms_users` (`rooms_users_id`, `user_room_id`, `date_room_id`, `room_user_id`, `room_user_reserved_date`) VALUES
-(1, 2, 1, 4, '2019-10-04 11:00:00'),
-(2, 2, 2, 4, '2019-10-05 12:00:00'),
-(3, 2, 7, 5, '2019-10-04 18:00:00');
+(5, 8, 4, 4, '2019-10-05 14:00:00');
 
 -- --------------------------------------------------------
 
@@ -118,8 +115,7 @@ CREATE TABLE `ws_users` (
 --
 
 INSERT INTO `ws_users` (`user_id`, `user_name`, `user_lastname`, `user_cpf`, `user_telephone`, `user_cell`, `user_email`, `user_password`, `user_registration`, `user_lastupdate`, `user_level`, `user_genre`, `user_cover`) VALUES
-(2, 'Guilhermert', 'Natus', '036.407.480-93', '(51)9999-9999', '(51)99999-9999', 'guilherme@webb.com', '896ae574a13abc5fde48ffcd2c70acd0', '2016-08-31 15:38:23', '2019-10-03 06:12:30', 3, 1, NULL),
-(6, 'Cion', 'Cion', '036.407.480-93', '(99) 9999-9999', '(99) 99999-9999', 'contato@agenciacion.com', 'a74f53e0e42f893fb94bd0637d571022', '2018-03-20 12:13:47', '2018-03-20 12:18:06', 3, 1, NULL);
+(8, 'guilherme', 'natus', '036.407.480-93', '(51)2222-2222', '(22)92222-2222', 'guilherme@webb.com', '7c9cf251d98287ea90a2682f68c2275e', '2019-10-05 06:19:25', '2019-10-05 06:21:34', 3, 1, NULL);
 
 --
 -- Indexes for dumped tables
@@ -163,19 +159,19 @@ ALTER TABLE `dates`
 -- AUTO_INCREMENT for table `rooms`
 --
 ALTER TABLE `rooms`
-  MODIFY `room_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `room_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
 
 --
 -- AUTO_INCREMENT for table `rooms_users`
 --
 ALTER TABLE `rooms_users`
-  MODIFY `rooms_users_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `rooms_users_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT for table `ws_users`
 --
 ALTER TABLE `ws_users`
-  MODIFY `user_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `user_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

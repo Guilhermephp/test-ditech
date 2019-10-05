@@ -6,7 +6,7 @@ endif;
 <div style="border:2px solid #eee;" class="container">
     <div class="container padding20 bg-write breadcrumbs">
         <div class="box box-large">
-            <h1 style="margin-top:6px; color: #555; margin-left: 40px; margin-bottom: 10px;" class="bg-write font300 fontsize1b">Cadastrar Usuário</h1>
+            <h1 style="margin-top:6px; color: #555; margin-left: 40px; margin-bottom: 10px;" class="bg-write font300 fontsize1b">Reservar Sala</h1>
             <p class="fontsizeb font400">>> Coffee Control / Dashboard / Reservar Sala <<</p>
         </div>
     </div>    

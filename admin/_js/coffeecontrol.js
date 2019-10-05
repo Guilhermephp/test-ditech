@@ -27,6 +27,8 @@ $(function(){
     
     // $$$$$$COFFEE-GuilhermeNatus-PHP$$$$$$ Mascara com o plugin Mask para o campo CPF do painel CoffeeControl! $$$$$$COFFEE-GuilhermeNatus-PHP$$$$$$
     $(".date").mask("99/99/9999");
+    $(".telephone").mask("(99)9999-9999");
+    $(".cell").mask("(99)99999-9999");
     
     // $$$$$$COFFEE-GuilhermeNatus-PHP$$$$$$ Verifica se não tem a classe no_post_ajax, para postar nos arquivos php e realizar o ajax! $$$$$$COFFEE-GuilhermeNatus-PHP$$$$$$
     $('form').not('.no_post_ajax').submit(function(){
@@ -63,6 +65,10 @@ $(function(){
             }
         });
         return false;
+    });
+
+    $(".close-window").click(function(){
+        $(".Error-fixed").fadeOut(500);
     });
     
     // BUSCAR CIDADES QUANDO ALTERA O OPTION DOS ESTADOS
@@ -154,7 +160,7 @@ $(function(){
 
     
     // $$$$$$COFFEE-GuilhermeNatus-PHP$$$$$$ Verifica se a pessoa não clicou em ok para não seguir o link de deletar uma categoria, post ou usuário!  $$$$$$COFFEE-GuilhermeNatus-PHP$$$$$$
-    $(".act_delete").click(function(){
+    $(".delete").click(function(){
         var ConfirmDelete = confirm("Quer Mesmo Deletar?");
         
         if(ConfirmDelete !== true){

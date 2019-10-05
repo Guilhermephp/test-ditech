@@ -52,10 +52,20 @@ endif;
                     header("Location:painel.php?cc=users/users");
                 endif; 
                 require('_models/AdminUser.class.php');
-                $deleteUser = new AdminUser;
-                $deleteUser->ExeDelete($delete);
 
-                header("Location:painel.php?cc=users/users");
+                $read_user_room = new _app\Conn\Read;
+                $read_user_room->FullRead("SELECT rooms_users_id FROM rooms_users WHERE user_room_id = :user_room_id", "user_room_id={$delete}");
+
+                if($read_user_room->getResult()){
+                    echo ErrorFixed("Erro ao deletar usuário: Esse usuário Possui uma sala reservada!");
+                }
+                else{
+                    $deleteUser = new AdminUser;
+                    $deleteUser->ExeDelete($delete);
+                    if($deleteUser->getResult()){
+                        echo ErrorFixed($deleteUser->getError()[0]);
+                    }
+                }
             }
         }
 
@@ -72,19 +82,18 @@ endif;
                 endif;
                 ?>">
                     <ul>    
-                        <li class="bottom5 ds-block"><span class="fontsizeb"><?= $user_name . " " . $user_lastname; ?></span></li>
-                        <li class="bottom5 ds-block"><span class="fontsizeb">Desde <?= date('d/m/Y', strtotime($user_registration)); ?> as <?= date('H:i', strtotime($user_registration)); ?></span></li>
-                        <li class="bottom5 ds-block"><span class="fontsizeb"><?php
-                                if ($user_level == 1) {
-                                    echo 'CLIENTE NOVO<p>(Usuário)</p>';
-                                } elseif ($user_level == 2) {
-                                    echo 'Editor';
-                                } else {
-                                    echo 'SUPER ADMIN<p>(Admin)</p>';
-                                }
-                                ?></span></li>
-                        <li class="ds-inblock"><a class="act_edit btn btn-green fontzero" href="painel.php?cc=users/create&id=<?= $user_id; ?>" title="Editar">Editar</a></li>
-                        <li class="ds-inblock"><a class="act_delete btn btn-red fontzero" href="painel.php?cc=users/users&delete=<?= $user_id; ?>" title="Deletar">Deletar</a></li>
+                        <li class="bottom5 ds-block">
+                            <span class="fontsizeb"><?= $user_name . " " . $user_lastname; ?></span>
+                        </li>
+                        <li class="bottom5 ds-block">
+                            <span class="fontsizeb">Desde <?= date('d/m/Y', strtotime($user_registration)); ?> as <?= date('H:i', strtotime($user_registration)); ?></span>
+                        </li>
+                        <li class="ds-block bottom5">
+                            <a class="btn btn-green" href="painel.php?cc=users/create&id=<?= $user_id; ?>" title="Editar">Editar</a>
+                        </li>
+                        <li class="ds-block">
+                            <a class="btn btn-red delete" href="painel.php?cc=users/users&delete=<?= $user_id; ?>" title="Deletar">Deletar</a>
+                        </li>
                     </ul>
                 </article>
                 <?php
